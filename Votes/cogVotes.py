@@ -43,7 +43,7 @@ class Votes(commands.Cog):
 
 
     # INIT GROUP COMMAND
-    groupVotes = discordCommands.SlashCommandGroup(init.cogName, "Various commands to manage Votes")
+    groupVotes = discordCommands.SlashCommandGroup(init.cogName, "🔶 Group of commands to manage the Votes addon.")
 
 
     # Verify if the bot has the prerequisites permissions

@@ -2,7 +2,7 @@
 enableGithub = True
 author = "Ted-18"
 repository = "Bot.Assistant-Votes"
-version = "1.0.0"
+version = "1.0.1"
 
 # To activate this addon
 cogEnabled = True
