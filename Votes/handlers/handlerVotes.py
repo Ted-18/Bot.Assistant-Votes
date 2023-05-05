@@ -1,5 +1,5 @@
 import services.serviceDatabase as serviceDatabase      
-from services.serviceLogger import consoleLogger as Logger
+from services.serviceLogger import Logger
 
 from settings.settingBot import debug
 
@@ -12,8 +12,7 @@ def addVotesChannel(serverID, channelID):
     requestSettings = (serverID, channelID,)
 
     try:
-        if debug == True:
-            Logger.debug("[HANDLER][VOTES][ADD] Adding a channel to the DB " + str(serverID) + " " + str(channelID))
+        Logger.debug("[HANDLER][VOTES][ADD] Adding a channel to the DB " + str(serverID) + " " + str(channelID))
             
         serviceDatabase.makeRequest(requestFormat, requestSettings)
 
@@ -28,8 +27,7 @@ def deleteVotesChannel(serverID, channelID):
                     """
     requestSettings = (serverID, channelID,)
     try:
-        if debug == True:
-            Logger.debug("[HANDLER][VOTES][DELETE] Deleting a channel from the DB " + str(channelID))
+        Logger.debug("[HANDLER][VOTES][DELETE] Deleting a channel from the DB " + str(channelID))
             
         serviceDatabase.makeRequest(requestFormat, requestSettings)
         
@@ -47,8 +45,7 @@ def listVotesChannel(serverID):
     try:
         result = serviceDatabase.getInfoRequest(requestFormat, requestSettings)
 
-        if debug == True:
-            Logger.debug("[HANDLER][VOTES][LIST] Retrieving the list of channels -> " + str(result))
+        Logger.debug("[HANDLER][VOTES][LIST] Retrieving the list of channels -> " + str(result))
             
         return result
     
@@ -66,8 +63,7 @@ def isVotesChannel(channelID):
     try:
         result = serviceDatabase.getInfoRequest(requestFormat, requestSettings)
 
-        if debug == True:
-            Logger.debug("[HANDLER][VOTES][ISVOTECHANNEL] Checking if the channel is a votes channel -> " + str(result))
+        Logger.debug("[HANDLER][VOTES][ISVOTECHANNEL] Checking if the channel is a votes channel -> " + str(result))
             
         if result != []:
             return True

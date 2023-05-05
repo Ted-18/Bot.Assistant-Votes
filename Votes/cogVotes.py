@@ -12,7 +12,7 @@ import addons.Votes.handlers.handlerDatabaseInit as handlerDatabaseInit
 import addons.Votes.handlers.handlerVotes as handlerVotes
 
 # BOTASSISTANT IMPORTS
-from services.serviceLogger import consoleLogger as Logger
+from services.serviceLogger import Logger
 from services.serviceDiscordLogger import discordLogger as DiscordLogger
 from settings.settingBot import debug
 
@@ -85,6 +85,6 @@ class Votes(commands.Cog):
         
 # INIT COG
 def setup(bot):
-    if debug: Logger.debug("Loading cog: " + init.cogName)
+    Logger.debug("Loading cog: " + init.cogName)
     handlerDatabaseInit.databaseInit()
     bot.add_cog(Votes(bot))
